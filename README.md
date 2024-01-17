@@ -19,21 +19,25 @@
 -->
 
 # docs-search
+
 - Uses the ServiceNow API to get Armory Knowledge Base articles
 - Parses the results and puts into a format that Elastic Cloud App Search understands
-- Uses the Elastic App Search API to push the articles to our Elastic Cloud App Search engines
-- Runs as a spinnaker job to push a Kubenretes job. https://spinnaker.armory.io/#/applications/website/executions
-- Secrets are stored in the docs-search namespace in the eks_prod cluster.
-- GitHub Action to push to GitHub Container Registry
+- Uses the Elastic App Search API to push the articles to Armory's Elastic Cloud App Search engines
+- Runs as a Kubernetes job. API keys are stored as Kubernetes secrets.
+- Armory used a GitHub Action to push the containerized app to GitHub Container Registry
 
 ## Prerequisites
+
 Docker
 
 ## Developer setup
+
 - clone the repo
 
 ## Run the job in a container
+
 From the `docs-search` directory:
+
 ```
 docker build -t armory/docs-search-updater .
 ## API_PRIVATE_KEY is the ElasticSearch API key for posting data.
@@ -41,6 +45,7 @@ docker run --env API_PRIVATE_KEY=replaceme -it <image>
 ```
 
 ## Resources
+
 - https://www.elastic.co/guide/en/enterprise-search-clients/python/current/index.html
 - https://docs.servicenow.com/bundle/paris-application-development/page/integrate/inbound-rest/concept/knowledge-api.html#knowledge-management-api
 
@@ -58,7 +63,3 @@ docker run --env API_PRIVATE_KEY=replaceme -it <image>
 - `app.py`:
    - This file fetches KB articles, formats the data, and then posts to Elastic.
    - Logging: RotatingFileHandler appender writes to `kb-job.log`; StreamHandler write to sys.stdout 
-
-## TODO
-
-
