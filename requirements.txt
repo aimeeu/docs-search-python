@@ -1,0 +1,2 @@
+elastic-enterprise-search==7.15
+requests==2.26.0

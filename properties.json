@@ -1,0 +1,17 @@
+{
+  "serviceNow": {
+    "apiUrl": "https://support.armory.io/api/sn_km_api/knowledge/articles",
+    "fetchLimit": "1000",
+    "articleUrlBase": "https://support.armory.io/support",
+    "publicKbSysId": "cda67acf2f046010bd855d8b2799b61b",
+    "customerKbSysId": "e453895e2f9c2010bd855d8b2799b68e",
+    "username": "armorysearch@armory.io"
+  },
+  "elasticAppSearch": {
+    "apiUrl": "https://docs-team.ent.us-east-2.aws.elastic-cloud.com",
+    "postSizeLimit": "100",
+    "engines": [
+      "support-site"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: docs-search-updater
+  namespace: docs-search
+spec:
+  template:
+    spec:
+      containers:
+        - name: pi
+          image: ghcr.io/armory/docs-search:latest
+          env:
+            - name: API_PRIVATE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: docs-search-api-key
+                  key: api-key
+            - name: SERVICENOW_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: docs-search-servicenow-key
+                  key: servicenow-key
+      restartPolicy: Never
