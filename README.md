@@ -20,11 +20,13 @@
 
 # docs-search
 
-- Uses the ServiceNow API to get Armory Knowledge Base articles
-- Parses the results and puts into a format that Elastic Cloud App Search understands
-- Uses the Elastic App Search API to push the articles to Armory's Elastic Cloud App Search engines
-- Runs as a Kubernetes job. API keys are stored as Kubernetes secrets.
-- Armory used a GitHub Action to push the containerized app to GitHub Container Registry
+**I wrote this app when I worked for Armory. This app contains no propriety code or information. Harness bought Armory in December, 2023. This app no longer runs in production.** 
+
+- Used the ServiceNow API to get Armory Knowledge Base articles
+- Parsed the results and puts into a format that Elastic Cloud App Search understood
+- Used the Elastic App Search API to push the articles to Armory's Elastic Cloud App Search engines
+- Ran as a Kubernetes job with API keys stored as Kubernetes secrets
+- Used a GitHub Action to push the containerized app to the GitHub Container Registry
 
 ## Prerequisites
 
@@ -32,7 +34,7 @@ Docker
 
 ## Developer setup
 
-- clone the repo
+- Clone the repo
 
 ## Run the job in a container
 
